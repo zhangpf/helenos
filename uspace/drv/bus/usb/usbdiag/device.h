@@ -53,6 +53,8 @@
 #define USBDIAG_EP_DATA_ISOCH_IN   11
 #define USBDIAG_EP_DATA_ISOCH_OUT  12
 
+#define USBDIAG_EP_LENGTH          13
+
 /**
  * USB diagnostic device.
  */

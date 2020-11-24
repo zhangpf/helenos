@@ -44,7 +44,7 @@
 
 #define NAME "usbdiag"
 
-static const usb_endpoint_description_t *diag_endpoints[];
+static const usb_endpoint_description_t *diag_endpoints[USBDIAG_EP_LENGTH];
 
 static errno_t device_add(usb_device_t *dev)
 {
@@ -235,7 +235,7 @@ static const usb_endpoint_description_t data_isoch_out_ep = {
 	.flags = 0
 };
 
-static const usb_endpoint_description_t *diag_endpoints[] = {
+static const usb_endpoint_description_t *diag_endpoints[USBDIAG_EP_LENGTH] = {
 	[USBDIAG_EP_BURST_INTR_IN] = &burst_intr_in_ep,
 	[USBDIAG_EP_BURST_INTR_OUT] = &burst_intr_out_ep,
 	[USBDIAG_EP_BURST_BULK_IN] = &burst_bulk_in_ep,

@@ -52,7 +52,7 @@
 #define DEFAULT_ERROR_COUNT 3
 
 /** Transfer batch setup table. */
-static void (*const batch_setup[])(uhci_transfer_batch_t *);
+static void (*const batch_setup[4])(uhci_transfer_batch_t *);
 
 /** Destroys uhci_transfer_batch_t structure.
  *
@@ -327,7 +327,7 @@ static void batch_control(uhci_transfer_batch_t *uhci_batch)
 	    uhci_batch->tds[td].status);
 }
 
-static void (*const batch_setup[])(uhci_transfer_batch_t *) =
+static void (*const batch_setup[4])(uhci_transfer_batch_t *) =
     {
 	[USB_TRANSFER_CONTROL] = batch_control,
 	[USB_TRANSFER_BULK] = batch_data,

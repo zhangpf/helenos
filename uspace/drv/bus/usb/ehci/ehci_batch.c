@@ -54,7 +54,7 @@
  */
 #define EHCI_TD_MAX_TRANSFER   (16 * 1024)
 
-static void (*const batch_setup[])(ehci_transfer_batch_t *);
+static void (*const batch_setup[4])(ehci_transfer_batch_t *);
 
 /** Safely destructs ehci_transfer_batch_t structure
  *
@@ -369,7 +369,7 @@ static void batch_data(ehci_transfer_batch_t *ehci_batch)
 }
 
 /** Transfer setup table. */
-static void (*const batch_setup[])(ehci_transfer_batch_t *) =
+static void (*const batch_setup[4])(ehci_transfer_batch_t *) =
     {
 	[USB_TRANSFER_CONTROL] = batch_control,
 	[USB_TRANSFER_BULK] = batch_data,

@@ -47,7 +47,7 @@
 #include "ohci_batch.h"
 #include "ohci_bus.h"
 
-static void (*const batch_setup[])(ohci_transfer_batch_t *);
+static void (*const batch_setup[4])(ohci_transfer_batch_t *);
 
 /** Safely destructs ohci_transfer_batch_t structure
  *
@@ -377,7 +377,7 @@ static void batch_data(ohci_transfer_batch_t *ohci_batch)
 }
 
 /** Transfer setup table. */
-static void (*const batch_setup[])(ohci_transfer_batch_t *) =
+static void (*const batch_setup[4])(ohci_transfer_batch_t *) =
     {
 	[USB_TRANSFER_CONTROL] = batch_control,
 	[USB_TRANSFER_BULK] = batch_data,

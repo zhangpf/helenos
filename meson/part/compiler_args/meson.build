@@ -82,7 +82,7 @@ if UARCH != 'ia64'
 endif
 
 if CONFIG_DEBUG
-	extra_common_flags += [ '-Werror' ]
+	# extra_common_flags += [ '-Werror' ]
 endif
 
 if CONFIG_LINE_DEBUG

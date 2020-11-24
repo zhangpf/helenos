@@ -57,7 +57,7 @@ static kbd_dev_t *kbd_dev;
 #define KBD_KEY_RELEASE		0x80
 #define KBD_ALL_KEYS_UP		0x7f
 
-static int scanmap_simple[];
+static int scanmap_simple[0x80];
 
 static errno_t sun_ctl_init(kbd_dev_t *kdev)
 {
